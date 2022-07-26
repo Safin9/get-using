@@ -6,6 +6,6 @@ class MyThemes extends GetxController {
     scaffoldBackgroundColor: Colors.red[900],
   );
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: const Color.fromARGB(255, 182, 182, 182),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 227, 159, 159),
   );
 }
