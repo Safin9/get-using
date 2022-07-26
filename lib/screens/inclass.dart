@@ -1,7 +1,3 @@
-import 'dart:math';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:in_class_asssignment/screens/list_of_users.dart';
@@ -112,9 +108,9 @@ class _InclassState extends State<Inclass> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        DatabaseReference tes =
-                            FirebaseDatabase.instance.ref().child('test');
-                        tes.set("test${Random().nextInt(100)}");
+                        // DatabaseReference tes =
+                        //     FirebaseDatabase.instance.ref().child('test');
+                        // tes.set("test${Random().nextInt(100)}");
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: ((context) => const ListOfUser())));
                       },
