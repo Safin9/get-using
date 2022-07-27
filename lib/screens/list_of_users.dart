@@ -15,6 +15,8 @@ class ListOfUser extends StatelessWidget {
           createuser(
               controller: namecontroller.value.text,
               msgController: msgController.value.text);
+          namecontroller.clear();
+          msgController.clear();
         }),
       ),
       body: Stack(
@@ -62,9 +64,13 @@ class ListOfUser extends StatelessWidget {
                                   children: [
                                     const Text('Message:'),
                                     const SizedBox(width: 10),
-                                    Text(snapshot.data!.docs[index]
-                                        .data()["message"]
-                                        .toString())
+                                    Expanded(
+                                      child: Wrap(children: [
+                                        Text(snapshot.data!.docs[index]
+                                            .data()["message"]
+                                            .toString()),
+                                      ]),
+                                    )
                                   ],
                                 ),
                               ),
@@ -81,25 +87,31 @@ class ListOfUser extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Column(
-              children: [
-                TextField(
-                  decoration: const InputDecoration(
-                    label: Text('Name'),
-                    fillColor: Colors.white,
-                  ),
-                  controller: namecontroller,
+            child: Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: const InputDecoration(
+                        label: Text('Name'),
+                        fillColor: Colors.white,
+                      ),
+                      controller: namecontroller,
+                    ),
+                    TextField(
+                      decoration: const InputDecoration(
+                        label: Text('message'),
+                        fillColor: Colors.white,
+                      ),
+                      controller: msgController,
+                    ),
+                  ],
                 ),
-                TextField(
-                  decoration: const InputDecoration(
-                    label: Text('message'),
-                    fillColor: Colors.white,
-                  ),
-                  controller: msgController,
-                ),
-              ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
