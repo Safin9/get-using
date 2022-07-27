@@ -112,7 +112,7 @@ class _InclassState extends State<Inclass> {
                         //     FirebaseDatabase.instance.ref().child('test');
                         // tes.set("test${Random().nextInt(100)}");
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: ((context) => const ListOfUser())));
+                            builder: ((context) => ListOfUser())));
                       },
                       child: myContainer(
                         icon: Icons.message,
