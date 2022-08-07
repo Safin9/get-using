@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:in_class_asssignment/screens/list_of_users.dart';
+import 'package:in_class_asssignment/screens/signin.dart';
 
 class Inclass extends StatefulWidget {
   const Inclass({Key? key}) : super(key: key);
@@ -119,9 +120,15 @@ class _InclassState extends State<Inclass> {
                         color: const Color.fromRGBO(243, 242, 255, 1),
                       ),
                     ),
-                    myContainer(
-                      icon: Icons.mail,
-                      color: const Color.fromRGBO(199, 228, 255, 1),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => const SignIn())));
+                      },
+                      child: myContainer(
+                        icon: Icons.mail,
+                        color: const Color.fromRGBO(199, 228, 255, 1),
+                      ),
                     ),
                     myContainer(
                       icon: Icons.call,
