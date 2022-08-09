@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
+import 'package:in_class_asssignment/controller/test_controller.dart';
 
 class ListOfUser extends StatelessWidget {
   ListOfUser({Key? key}) : super(key: key);
@@ -8,8 +10,13 @@ class ListOfUser extends StatelessWidget {
   Widget build(BuildContext context) {
     final namecontroller = TextEditingController();
     final msgController = TextEditingController();
+    final numcontroller = Get.put(NumberTest());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Obx(() {
+          return Text(numcontroller.number.string);
+        }),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: (() {
           createuser(
